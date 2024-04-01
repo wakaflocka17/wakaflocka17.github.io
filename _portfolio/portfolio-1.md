@@ -1,7 +1,7 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "SmallWorld Network Analysis"
+excerpt: "<img src='/images/net_analysis.svg'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+In this project, a SmallWorld type network is used, which is not oriented, so the implementation of several centrality indices is required, including: Exponential-Subgraph Centrality, Resolvent-Subgraph Centrality and Katz Centrality. In addition, Broadcast and Receive indices were also implemented for temporal networks.
