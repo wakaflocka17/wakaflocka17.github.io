@@ -12,7 +12,7 @@ title                    : "Wakaflocka17"
 title_separator          : "-"
 name                     : &name "Francesco Congiu"
 description              : &description "MSc Student in Applied Artificial Intelligence"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://wakaflocka17.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wakaflocka17/wakaflocka17.github.io"
 
