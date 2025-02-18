@@ -19,7 +19,7 @@ At the moment, my library of publications is like a blank sheet of paper, full o
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" height="40"/>
   
   <!-- Linguaggio Assembly (non esiste icona Devicon, uso generica CPU/Chip) -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Gnome-computer.svg" width="40" height="40"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cpu-icon.svg" width="40" height="40"/>
   
   <!-- Linguaggio C++ -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40"/>
@@ -46,7 +46,7 @@ At the moment, my library of publications is like a blank sheet of paper, full o
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="40" height="40"/>
   
   <!-- NumPy -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="40" height="40"/>
   
   <!-- Pandas -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40" height="40"/>
@@ -72,9 +72,12 @@ At the moment, my library of publications is like a blank sheet of paper, full o
   <!-- MongoDB -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40"/>
   
-  <!-- Q-GIS (Non ha icona su Devicon, uso logo ufficiale) -->
+  <!-- Q-GIS (uso logo ufficiale) -->
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/QGIS_logo_minimal.svg" width="40" height="40"/>
   
   <!-- PostgreSQL -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" height="40"/>
+  
+  <!-- Unity -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" width="40" height="40"/>
 </p>
