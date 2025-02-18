@@ -21,7 +21,7 @@ repository               : "wakaflocka17/wakaflocka17.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.heic"
+  avatar           : "profile.png"
   name             : "Francesco Congiu"
   pronouns         : # example: "she/her"  
   bio              : "MSc Student in Applied Artificial Intelligence"
