@@ -18,14 +18,14 @@ At the moment, my library of publications is like a blank sheet of paper, full o
   <!-- Linguaggio C -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="40" height="40"/>
   
-  <!-- Linguaggio Assembly (non esiste icona Devicon, uso generica CPU/Chip) -->
+  <!-- Linguaggio Assembly (uso icona generica) -->
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cpu-icon.svg" width="40" height="40"/>
   
   <!-- Linguaggio C++ -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40" height="40"/>
   
   <!-- Linguaggio OCaml -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Ocaml_logo.svg" width="40" height="40"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Ocaml_logo.svg" width="40" height="40"/>
   
   <!-- Linguaggio Java -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40"/>
@@ -72,7 +72,7 @@ At the moment, my library of publications is like a blank sheet of paper, full o
   <!-- MongoDB -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" height="40"/>
   
-  <!-- Q-GIS (uso logo ufficiale) -->
+  <!-- Q-GIS -->
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/QGIS_logo_minimal.svg" width="40" height="40"/>
   
   <!-- PostgreSQL -->
