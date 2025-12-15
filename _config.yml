@@ -1,15 +1,15 @@
 # Basic Information 
-title: Yaoyao Liu
-position: Assistant Professor
-affiliation: University of Illinois
-affiliation_link: https://www.illinois.edu/
+title: Francesco Congiu
+position: PhD Student
+affiliation: University of Cagliari
+affiliation_link: https://www.unica.it/it
 affiliation_logo: ./assets/img/illinois.svg
-email: lyy (at) illinois.edu
+email: francesco.congiu (dot) acm 
 
 # Search Engine Optimization (SEO)
-keywords: yaoyao liu, liu yaoyao, yaoyaoliu, liuyaoyao
-canonical: https://yaoyaoliu.web.illinois.edu
-description: Yaoyao Liu is an assistant professor at the University of Illinois Urbana-Champaign. His research lies in meta-learning, incremental learning, and image generation.
+keywords: francesco congiu, congiu francesco, francescocongiu, congiufrancesco
+canonical: https://francescocongiu.com
+description: Francesco Congiu is an PhD Student at the University of Cagliari. His research lies in Generative Recommender Systems, RAG and Trustworthy systems.
 
 # The option is used to enable the Illinois template.
 enable_hopkins_logo: true
@@ -19,10 +19,10 @@ enable_last_update: false
 
 # Links
 link_type: icon #text/icon
-google_scholar: https://scholar.google.com/citations?user=Qi2PSmEAAAAJ
-github_link: https://github.com/yaoyao-liu/
-linkedin: https://www.linkedin.com/in/liuyaoyao/
-twitter: https://twitter.com/YaoyaoLiu1/
+google_scholar:
+github_link: https://github.com/wakaflocka17/
+linkedin: https://www.linkedin.com/in/f-congiu-res
+twitter: https://twitter.com/fcongiu_res/
 
 # Images 
 avatar: https://img.yliu.me/avatar_new.jpg
@@ -34,7 +34,7 @@ footnote_link: https://github.com/yaoyao-liu/minimal-light
 # Analytics
 # Please remove the following lines about analytics services if you fork my project. 
 # Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
-clustrmaps_id: HV0rAUdAxpfEQLOsVs0FcJTR2rKVI5sEQUZIDM-N_HY
+# clustrmaps_id: HV0rAUdAxpfEQLOsVs0FcJTR2rKVI5sEQUZIDM-N_HY
 
 # The following files will be removed from the generated website.
 exclude:
