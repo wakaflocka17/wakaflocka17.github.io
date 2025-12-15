@@ -12,7 +12,7 @@ canonical: https://francescocongiu.com
 description: Francesco Congiu is an PhD Student at the University of Cagliari. His research lies in Generative Recommender Systems, RAG and Trustworthy systems.
 
 # The option is used to enable the Illinois template.
-enable_hopkins_logo: true
+enable_hopkins_logo: false
 
 # The option is used to show the last update time.
 enable_last_update: false
@@ -25,7 +25,7 @@ linkedin: https://www.linkedin.com/in/f-congiu-res
 twitter: https://twitter.com/fcongiu_res/
 
 # Images 
-avatar: https://img.yliu.me/avatar_new.jpg
+avatar: https://media.licdn.com/dms/image/v2/D4D03AQHYfitXdtnyJQ/profile-displayphoto-crop_800_800/B4DZsPVIvwHkAM-/0/1765488759461?e=1767225600&v=beta&t=QOoQvOk6EdzQSMpcRkRbyoZJ9jrVlx6rO1iOHwRoZdM
 
 # Footnotes
 footnote: Feel free to use my website's source code.
