@@ -6,7 +6,7 @@ layout: homepage
 
 <h2 style="margin: 80px 0px 10px;"></h2>
 
-I am an PhD Student in the [University of Cagliari](https://www.unica.it/it) at the TAIL (Trustworthy and Artificial Intelligence Laboratory), under the supervision of Prof. [Ludovico Boratto](https://www.ludovicoboratto.com) and Prof. [Mirko Marras](https://www.mirkomarras.com).
+I am a PhD Student in the [University of Cagliari](https://www.unica.it/it) at the TAIL (Trustworthy and Artificial Intelligence Laboratory), under the supervision of Prof. [Ludovico Boratto](https://www.ludovicoboratto.com) and Prof. [Mirko Marras](https://www.mirkomarras.com).
 
 My research lies at the intersection of **Natural Language Processing** and **Information Retrieval** - with a special focus on building intelligent retrieval systems that are confidential. My research interest include **Recommender Systems**, **Retrieval-Augmented Generation** and **Confidential AI**, applied to Educational and Professional contexts.
 
