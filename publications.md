@@ -30,18 +30,19 @@ permalink: /publications/
 
 ### Abstract
 <a id="abstract-rag"></a>
-In recent years, the Retrieval-Augmented Generation (RAG) paradigm has become central to improving the reliability of systems based on Large Language Models (LLMs). However, much of the literature overlooks a crucial requirement in educational and professional settings: **content confidentiality**. 
-
-We present **RetrievEM**, a confidentiality-aware RAG framework that integrates dense retrieval, reranking, and a novel **Backfill** algorithm. Our results show that effectiveness and confidentiality are not conflicting goals, delivering pedagogically useful content while strictly respecting access policies.
+In recent years, the Retrieval-Augmented Generation (RAG) paradigm has become central to improving the reliability of systems based on Large Language Models (LLMs), as it grounds generation in evidence from external collections. However, much of the literature focuses almost exclusively on retrieval effectiveness, overlooking a crucial requirement in educational and professional settings: content confidentiality. The absence of mechanisms ensuring that only authorized documents are returned to the user risks limiting adoption in real scenarios. We present RetrievEM, a confidentiality-aware RAG framework validated on the BEIR/FiQA benchmark. Our approach pursues a dual objective: (i) improving retrieval by combining heterogeneous signals from different components, and (ii) ensuring that returned content complies with user-specific access constraints. RetrievEM integrates dense retrieval, reranking with cross-encoders, score-level fusion, and access-aware persona generation. Experimental results show that fusion yields substantial gains over individual components. Considering the limited accessible documents and RAG-related selection bias, we introduce Backfill, a post-processing algorithm that increases the search depth by exploring beyond the initial top-k results, preserving confidentiality without sacrificing retrieval utility. Overall, our RAG system can deliver pedagogically useful content while respecting access policies, showing that effectiveness and confidentiality are not conflicting goals.
 
 ### BibTeX
 <a id="bibtex-rag"></a>
+
+{% raw %}
 ```bibtex
 @inproceedings{boratto2025confidential,
   title={Confidential Retrieval-Augmented Generation in Educational Contexts},
-  author={Boratto, Ludovico and Congiu, Francesco and Fenu, Gianni and Medda, Giacomo},
+  author={Boratto, Ludovico and Congiu, Francesco and Fenu, Gianni and Medda, Giacomo and Pau, Antonello},
   booktitle={2nd Workshop on Artificial Intelligence with and for Learning Sciences (WAILS)},
   series={Lecture Notes in Computer Science (LNCS)},
   year={2025},
   publisher={Springer}
 }
+{% endraw %}
