@@ -8,12 +8,12 @@ permalink: /publications/
 
 <div style="margin-bottom: 40px; display: flex; align-items: flex-start; gap: 20px;">
   <div style="flex-shrink: 0;">
-    <img src="/assets/papers/wails25_thumb.jpg" alt="Paper Thumbnail" style="width: 180px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
+    <img src="/assets/papers/wails25_thumb.png" alt="Paper Thumbnail" style="width: 180px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
   </div>
 
   <div>
+    <span style="background-color: #003366; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">WAILS '25</span>
     <span style="background-color: #6c757d; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; text-transform: uppercase;">Under Peer-Review</span>
-    
     <h3 style="margin-top: 8px; margin-bottom: 8px;">Confidential Retrieval-Augmented Generation in Educational Contexts</h3>
     
     Ludovico Boratto, <strong>Francesco Congiu</strong>, Gianni Fenu, Giacomo Medda, Antonello Pau<br>
@@ -24,7 +24,7 @@ permalink: /publications/
       <a href="/assets/papers/confidential-rag-edu.pdf" target="_blank" style="
         display: inline-block;
         padding: 6px 12px;
-        background-color: #17a2b8;
+        background-color: #003366;
         color: white;
         text-decoration: none;
         border-radius: 4px;
