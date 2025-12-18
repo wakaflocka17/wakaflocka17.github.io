@@ -35,6 +35,7 @@ In recent years, the Retrieval-Augmented Generation (RAG) paradigm has become ce
 ### BibTeX
 <a id="bibtex-rag"></a>
 
+{%- hr -%}
 {% raw %}
 ```bibtex
 @inproceedings{boratto2025confidential,
