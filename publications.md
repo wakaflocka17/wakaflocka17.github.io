@@ -8,7 +8,7 @@ permalink: /publications/
 
 <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px;">
   <div style="flex-shrink: 0;">
-    <img src="/assets/papers/wails25_thumb.jpg" alt="Paper Thumbnail" style="width: 180px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <img src="/assets/papers/wails25_thumb.png" alt="Paper Thumbnail" style="width: 180px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   </div>
   <div>
     <span style="background-color: #003366; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold;">WAILS '25</span>
