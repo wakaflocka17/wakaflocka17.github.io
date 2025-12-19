@@ -1,6 +1,6 @@
 main:
   - title: "CV"
-    url: /assets/pdf/congiu_francesco_resume.pdf
+    url: assets/pdf/congiu_francesco_resume.pdf
     
   - title: "Publications"
     url: publications/
