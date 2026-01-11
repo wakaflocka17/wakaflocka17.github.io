@@ -25,7 +25,7 @@ linkedin: https://www.linkedin.com/in/f-congiu-res
 twitter: https://twitter.com/fcongiu_res/
 
 # Images 
-avatar: ./assets/img/avatar.jpeg
+avatar: /assets/img/avatar.jpeg
 
 # Footnotes
 footnote: "&copy; 2025 Francesco Congiu. Powered by Yaoyao Liu</a>."
