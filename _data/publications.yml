@@ -4,7 +4,7 @@ main:
     conference_short: "WAILS '25"
     conference: "2nd Workshop on Artificial Intelligence with and for Learning Sciences (WAILS '25). To appear in: Lecture Notes in Computer Science (LNCS), Springer."
     pdf: ""
-    image: "/assets/papers/wails25_thumb.png"
+    image: "/assets/papers/wails_rag.jpg"
     
   - title: "Confidentiality-Preserving Retrieval-Augmented Generation over Educational Resources"
     authors: "Ludovico Boratto, <strong>Francesco Congiu</strong>, Gianni Fenu, Mirko Marras"
