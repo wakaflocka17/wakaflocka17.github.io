@@ -1,4 +1,7 @@
 main:
+  - title: "Teaching"
+    url: teaching/
+  
   - title: "CV"
     url: assets/pdf/congiu_francesco_resume.pdf
     
