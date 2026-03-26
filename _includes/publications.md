@@ -1,19 +1,28 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+---
+
 <h1 id="publications"></h1>
 
-<h2 style="margin: 60px 0px -15px;">Publications <span style="font-size:15px;">[</span><a href="https://scholar.google.com/citations?user=3vvc7RAAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><span style="font-size:15px;">]</span></h2>
+<h2 style="margin: 60px 0px 30px;">Publications <span style="font-size:15px;">[</span><a href="https://scholar.google.com/citations?user=3vvc7RAAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><span style="font-size:15px;">]</span></h2>
 
 <div class="publications">
 <ol class="bibliography">
 
 {% for link in site.data.publications.main %}
 
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+<li style="margin-bottom: 40px;">
+
+<div class="pub-row" style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 30px;">
+  
+  <div class="abbr" style="flex: 0 0 250px; position: relative;">
     <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
     <abbr class="badge">{{ link.conference_short }}</abbr>
   </div>
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+  
+  <div style="flex: 1;">
       
       <div class="title">
         {% if link.scholar_url and link.scholar_url != "" %}
@@ -23,7 +32,7 @@
         {% endif %}
       </div>
       
-      <div class="author">{{ link.authors }}</div>
+      <div class="author" style="margin-top: 5px; margin-bottom: 5px;">{{ link.authors }}</div>
       <div class="periodical"><em>{{ link.conference }}</em></div>
       
     <div class="links">
@@ -33,10 +42,9 @@
     </div>
     
   </div>
+
 </div>
 </li>
-
-<br>
 
 {% endfor %}
 
