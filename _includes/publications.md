@@ -1,9 +1,3 @@
----
-layout: page
-title: Publications
-permalink: /publications/
----
-
 <h1 id="publications"></h1>
 
 <h2 style="margin: 60px 0px 30px;">Publications <span style="font-size:15px;">[</span><a href="https://scholar.google.com/citations?user=3vvc7RAAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><span style="font-size:15px;">]</span></h2>
