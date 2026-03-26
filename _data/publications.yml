@@ -5,7 +5,7 @@ main:
     conference_short: "WAILS '25"
     conference: "2nd Workshop on Artificial Intelligence with and for Learning Sciences (WAILS '25). To appear in: Lecture Notes in Computer Science (LNCS), Springer."
     pdf: ""
-    image: "/assets/papers/wails25_screenshot_full.png"
+    image: "/assets/papers/wails_rag.jpg"
     
   - title: "Confidentiality-Preserving Retrieval-Augmented Generation over Educational Resources"
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=it&user=3vvc7RAAAAAJ&citation_for_view=3vvc7RAAAAAJ:u5HHmVD_uO8C"
@@ -13,4 +13,4 @@ main:
     conference_short: "SIREM '25"
     conference: "Journal of Inclusive Methodology and Technology in Learning and Teaching 5 (3)"
     pdf: "" 
-    image: "/assets/papers/sirem_screenshot.png"
+    image: "/assets/papers/confidentiality_rag.png"
