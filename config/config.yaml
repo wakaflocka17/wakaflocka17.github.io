@@ -141,17 +141,18 @@ sections:
     tab_label: "Prospective Students"
     status: "FILLED"             # OPEN -> green badge/tab, FILLED -> amber
     body: |
-      I supervise **one MSc thesis student at a time**, and that position is currently filled. Owing to my professional commitments, I am **not accepting new thesis proposals at this time**, and cannot reply to application emails until the next cycle.
+      I supervise **one BSc/MSc thesis student at a time**, and that position is currently filled. Owing to my accademic commitments, I am **not accepting new thesis proposals at this time**, and cannot reply to application emails until the next cycle.
 
-      **Next evaluation window: Spring 2027** *(placeholder - update with your real date)*.
+      **Next evaluation window: Autumn 2026**.
 
-      My research lies at the intersection of **Retrieval-Augmented Generation (RAG)** and **Reinforcement Learning (RL)**. If you intend to apply in a future cycle, strong applicants typically bring:
+      My research focuses primarily on **RAG systems** and their various aspects. If you are planning to apply for a future recruitment round, the most suitable candidates generally possess:
 
       - A solid foundation in **Deep Learning** (architectures, training, evaluation).
       - Practical proficiency in **Python** and **PyTorch**.
       - Some familiarity with **RAG pipelines** and/or **RL fundamentals** (e.g., policy-gradient methods).
 
       In the meantime, consolidate these foundations, follow recent literature in both areas, and complete a small self-contained project you can later point to. **Please do not send an application email while this section reads FILLED** - messages received in this period cannot be considered. I will update this page as soon as the position reopens.
+````
 
 ## ------------------------------------------------------------------- FOOTER
 footer: |
