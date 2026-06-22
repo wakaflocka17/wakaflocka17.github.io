@@ -1,0 +1,135 @@
+## ===========================================================================
+##  SITE CONFIGURATION
+##  This is the ONLY file you need to edit to change the content.
+##  Text formatting (bio, descriptions, news):
+##    **bold**   *italic*   ~~strikethrough~~   [link text](https://example.com)
+##  Keep a space after each colon and preserve the indentation (2 spaces).
+## ===========================================================================
+
+site:
+  title: "Francesco Congiu"          # Title shown in the browser tab
+  accent: "#4f46e5"             # Accent color (any hex code)
+  default_theme: "auto"         # light | dark | auto (follows the system)
+  # News badges are colored by year (a cycle of 5 colors).
+  # Order maps to year ending in …0/5, …1/6, …2/7, …3/8, …4/9.
+  # Leave as-is for the defaults, or customize here:
+  news_palette: ["#8ac926", "#3b9ae1", "#9b72aa", "#fb6962", "#f6c026"]
+
+## --------------------------------------------------------------------- HOME
+## The Home page shows three blocks, in this order:
+##   1) Who Am I / Research  -> profile.bio
+##   2) Supervisor           -> profile.supervisor
+##   3) Contact              -> profile.contact (falls back to the email)
+profile:
+  name: "Francesco Congiu"
+  role: "PhD Student · University of Cagliari"   # <-- edit with your exact title
+  photo: "assets/images/profile.jpg"      # replace with your photo
+  email: "francesco.congiu@acm.org"   # <-- replace with your real email
+
+  # Badges shown under your name (research areas)
+  research:
+    - "RAG Systems"
+    - "Knowledge Reconciliation"
+    - "Explainable RAG Systems"
+    - "Confidentiality-Preserving RAG Systems"
+    - "Education"
+    - "NLP"
+    - "IR"
+
+  # 1) Who Am I / Research
+  bio: |
+    I am a PhD Student in the [University of Cagliari](https://www.unica.it/it) at the TAIL 
+    (Trustworthy Artificial Intelligence Laboratory). My research interest include **Retrieval-Augmented Generation Systems** 
+    and **Confidential AI**, applied to Educational and Professional contexts. 
+    Previously, I completed my MS in Applied Artificial Intelligence (summa cum laude) and my BS in Computer Science at [University of Cagliari](https://www.unica.it/it).
+
+  # 2) Supervisor
+  supervisor: |
+    My PhD research is supervised by Prof. [Ludovico Boratto](https://www.ludovicoboratto.com)
+    and Prof. [Mirko Marras](https://www.mirkomarras.com) at
+    the Department of Mathematics and Computer Science, University of Cagliari.
+
+  # 3) Contact (optional: if omitted, the email above is used automatically)
+  contact: |
+    Feel free to reach out by email at
+    [francesco.congiu@acm.org](mailto:francesco.congiu@acm.org), or connect through any
+    of the links next to my photo.
+
+  # Icons under the photo. The email icon is added automatically from "email".
+  # Available types: scholar, orcid, github, gitlab, linkedin, twitter/x,
+  #   bluesky, mastodon, researchgate, arxiv, semantic-scholar, dblp, inspire,
+  #   youtube, website
+  links:
+    - type: scholar
+      url: "https://scholar.google.com/citations?user=3vvc7RAAAAAJ"
+    - type: orcid
+      url: "https://orcid.org/0009-0000-7821-0663"
+    - type: github
+      url: "https://github.com/wakaflocka17"
+    - type: linkedin
+      url: "https://www.linkedin.com/in/f-congiu-res"
+
+## --------------------------------------------------------------------- NEWS
+## Each news item has a date "MM/YYYY" and some text. The badge color depends
+## on the year (see news_palette above). Items are sorted automatically, from
+## newest to oldest. You can use **bold**, *italic*, ~~strikethrough~~ and
+## [links](https://...).
+news:
+  - date: "03/2026"
+    text: "Started as a Teaching Assistant for the [Algorithms and Data Structures](https://unica.coursecatalogue.cineca.it/corsi/2025/11185/insegnamenti/2025/21306/2025/9999?annoOrdinamento=2025&coorte=2025) course."
+
+  - date: "12/2025"
+    text: "Our paper *Confidential Retrieval-Augmented Generation in Educational Contexts* was presented at [WAILS25](https://wailsworkshop.github.io/2025/)."
+
+  - date: "11/2025"
+    text: "Our paper *Confidentiality-Preserving Retrieval-Augmented Generation over Educational Resources* was presented at [SIREM '25](https://sirem.org/convegno-2025/)."
+
+  - date: "11/2025"
+    text: "Started my PhD at [University of Cagliari](https://www.unica.it/) within TAIL!"
+
+## ------------------------------------------------------------- PUBLICATIONS
+## A list of your publications (Google Scholar has no reliable API for a static
+## site). Wrap your own name in **...** in the authors to highlight it. In
+## "links" add only what you have, e.g. [PDF] and [Code].
+publications:
+  - title: "Confidentiality-Preserving Retrieval-Augmented Generation over Educational Resources"
+    authors: "Boratto L., **Congiu F.**, Fenu G., Marras M."
+    venue: "SIREM'25"
+    year: 2025
+    # url: "https://example.com/paper"      # optional: makes the title a link
+    links:
+      - label: "PDF"
+        url: "https://inclusiveteaching.it/index.php/inclusiveteaching/article/download/447/421"
+      # - label: "Code"
+      #  url: "https://github.com/mariorossi/paper"
+
+  - title: "Confidential Retrieval-Augmented Generation in Educational Contexts"
+    authors: "Boratto L., **Congiu F.**, Fenu G., Medda G., Pau M."
+    venue: "WAILS'25"
+    year: 2025
+    links:
+      - label: "PDF"
+        url: "https://link.springer.com/chapter/10.1007/978-3-032-17604-2_8"
+
+## ----------------------------------------------------------------------- CV
+cv:
+  file: "assets/pdf/congiu_francesco_resume.pdf"     # path to your CV
+  description: "Last updated: June 2026."
+  embed: true                   # true shows the PDF preview inside the page
+
+## ------------------------------------------------------------------ TEACHING
+teaching:
+  - course: "Algorithms and Data Structures"
+    role: "Teaching Assistant"
+    institution: "University of Cagliari"
+    term: "Academic Year 2024/2025"
+    logo: "assets/images/unica.png"     # round logo shown next to the course
+    url: "https://course.unibo.it/algorithms"     # optional
+    description: |
+      Weekly lab sessions and student support on complexity, data structures
+      and algorithm design.
+
+## ------------------------------------------------------------------- FOOTER
+footer: |
+  © 2026 Francesco Congiu
+  Built with a minimal template.

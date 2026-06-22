@@ -1,0 +1,302 @@
+/* =========================================================================
+   Academic template — stylesheet
+   Single centered column, Inter + JetBrains Mono.
+   Change the accent color via "accent" in config.yaml.
+   ========================================================================= */
+
+:root {
+  color-scheme: light;
+  --accent: var(--accent-base, #4f46e5);
+
+  --bg: #ffffff;
+  --surface: #f4f4f5;
+  --border: #e4e4e7;
+  --text: #18181b;
+  --muted: #71717a;
+  --link: var(--accent);
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --maxw: 760px;
+  --transition: 200ms ease;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f0f11;
+  --surface: #1c1c20;
+  --border: #2a2a30;
+  --text: #ededed;
+  --muted: #9a9aa3;
+  --link: #8b85f5; /* fallback for browsers without color-mix */
+  --link: color-mix(in srgb, var(--accent-base, #4f46e5) 60%, white);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html { background-color: var(--bg); color: var(--text); }
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-decoration: none; text-underline-offset: 2px; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+
+/* ---------------------------------------------------------------- boot */
+.boot {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 2rem;
+  text-align: center;
+}
+.boot-error { color: #c0392b; max-width: 640px; line-height: 1.6; font-family: var(--font-sans); }
+
+/* --------------------------------------------------------------- toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+.theme-toggle:hover { color: var(--text); border-color: var(--text); }
+.theme-toggle svg { width: 18px; height: 18px; }
+
+/* ----------------------------------------------------------------- layout */
+/* ----------------------------------------------------------------- page */
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.3rem 3rem;
+  animation: fade 400ms ease both;
+}
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* --------------------------------------------------------------- header */
+.profile-header {
+  display: flex;
+  gap: clamp(1.1rem, 4vw, 2rem);
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+.avatar {
+  width: clamp(98px, 22vw, 140px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px var(--border);
+}
+@supports (background: color-mix(in srgb, red, blue)) {
+  .avatar { box-shadow: 0 0 0 1px var(--border), 0 0 0 6px color-mix(in srgb, var(--accent) 13%, transparent); }
+}
+.identity { min-width: 0; }
+.name {
+  font-weight: 800;
+  font-size: clamp(1.95rem, 6vw, 2.7rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+}
+.role { color: var(--muted); font-size: 0.97rem; margin: 0 0 0.75rem; }
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+.links a {
+  display: grid;
+  place-content: center;
+  width: 22px;
+  height: 22px;
+  color: var(--muted);
+  transition: color var(--transition), transform var(--transition);
+}
+.links a:hover { color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.links a svg { width: 20px; height: 20px; }
+
+/* ----------------------------------------------------------------- tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2.6rem;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.77rem;
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted);
+  transition: color var(--transition), border-color var(--transition);
+}
+.tag:hover { color: var(--text); border-color: var(--accent); }
+
+/* -------------------------------------------------------- section label */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  margin: 2.9rem 0 1.6rem;
+}
+.section-label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------- about */
+.about { font-size: 1.02rem; }
+.about p { margin: 0 0 1rem; }
+.about p:last-child { margin-bottom: 0; }
+
+/* ----------------------------------------------------------------- news */
+.news-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.news-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+.news-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--news-color, var(--muted));
+  padding: 0.26rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  margin-top: 0.15rem;
+}
+.news-text { margin: 0; }
+.news-text s { color: var(--muted); }
+
+/* --------------------------------------------------------- publications */
+.pub-list { display: flex; flex-direction: column; gap: 1.7rem; }
+.pub { position: relative; }
+.pub::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.pub:hover::before { opacity: 1; }
+.pub:hover .pub-title a { color: var(--link); }
+.pub-title { font-weight: 700; font-size: 1.06rem; line-height: 1.3; margin: 0 0 0.35rem; }
+.pub-title a { color: var(--text); }
+.pub-title a:hover { color: var(--link); }
+.pub-authors { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.35rem; }
+.pub-authors b { color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.pub-venue {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text);
+  margin: 0 0 0.55rem;
+}
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+/* ------------------------------------------------------------- teaching */
+.course {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.course-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--border);
+}
+.course-main { flex: 1; min-width: 0; }
+.course-title { font-weight: 700; font-size: 1rem; margin: 0 0 0.2rem; }
+.course-title a { color: var(--text); }
+.course-title a:hover { color: var(--link); }
+.course-sub { color: var(--muted); font-size: 0.92rem; margin: 0; }
+.course-term {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------- footer */
+.page-foot {
+  margin-top: 3.5rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--muted);
+  text-align: center;
+}
+
+.empty { color: var(--muted); font-style: italic; }
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width: 540px) {
+  .course { flex-wrap: wrap; }
+  .course-term { width: 100%; padding-left: calc(46px + 0.9rem); }
+}
+
+/* ----------------------------------------------------------- a11y */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading…</title>
+  <meta name="description" content="Personal academic website" />
+
+  <!-- Fonts: Inter (sans) + JetBrains Mono (mono accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- YAML parser (bundled, no external dependency) -->
+  <script src="config/js-yaml.min.js"></script>
+
+  <link rel="stylesheet" href="config/style.css" />
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme"></button>
+
+  <main class="page" id="app" hidden>
+    <header class="profile-header" id="profile-header"></header>
+    <div class="tags" id="tags" aria-label="Research areas"></div>
+    <div class="about" id="about"></div>
+    <section id="news"></section>
+    <section id="publications"></section>
+    <section id="teaching"></section>
+    <footer class="page-foot" id="page-foot"></footer>
+  </main>
+
+  <div class="boot" id="boot">Loading…</div>
+  <div class="boot boot-error" id="boot-error" hidden></div>
+
+  <script src="config/app.js"></script>
+</body>
+</html>
