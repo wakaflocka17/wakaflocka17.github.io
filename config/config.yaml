@@ -24,17 +24,16 @@ profile:
   name: "Francesco Congiu"
   role: "PhD Student · University of Cagliari"   # <-- edit with your exact title
   photo: "assets/images/profile.jpg"      # replace with your photo
-  email: "francesco.congiu@acm.org"   # <-- replace with your real email
+  email: "[francesco.congiu@acm.org](mailto:francesco.congiu@acm.org)"   # <-- replace with your real email
 
   # Badges shown under your name (research areas)
   research:
-    - "RAG Systems"
+    - "Confidentiality-Preserving RAG"
+    - "Explainable RAG"
     - "Knowledge Reconciliation"
-    - "Explainable RAG Systems"
-    - "Confidentiality-Preserving RAG Systems"
-    - "Education"
-    - "NLP"
-    - "IR"
+    - "User Modelling"
+    - "NLP & IR"
+    - "AI for Education"
 
   # 1) Who Am I / Research
   bio: |
@@ -94,7 +93,7 @@ news:
 publications:
   - title: "Confidentiality-Preserving Retrieval-Augmented Generation over Educational Resources"
     authors: "Boratto L., **Congiu F.**, Fenu G., Marras M."
-    venue: "SIREM'25"
+    venue: "SIREM"
     year: 2025
     # url: "https://example.com/paper"      # optional: makes the title a link
     links:
@@ -105,7 +104,7 @@ publications:
 
   - title: "Confidential Retrieval-Augmented Generation in Educational Contexts"
     authors: "Boratto L., **Congiu F.**, Fenu G., Medda G., Pau M."
-    venue: "WAILS'25"
+    venue: "WAILS"
     year: 2025
     links:
       - label: "PDF"
@@ -124,10 +123,11 @@ teaching:
     institution: "University of Cagliari"
     term: "Academic Year 2024/2025"
     logo: "assets/images/unica.png"     # round logo shown next to the course
-    url: "https://course.unibo.it/algorithms"     # optional
+    url: "https://unica.coursecatalogue.cineca.it/corsi/2025/11185/insegnamenti/2025/21306/2025/9999?annoOrdinamento=2025&coorte=2025"     # optional
     description: |
-      Weekly lab sessions and student support on complexity, data structures
-      and algorithm design.
+      Hands-on laboratory tutoring focused on the implementation and analysis of foundational 
+      data structures and algorithms. The sessions involved guiding students through practical coding exercises, 
+      debugging, and problem-solving using Python through Jupyter.
 
 ## ------------------------------------------------------------------- FOOTER
 footer: |
