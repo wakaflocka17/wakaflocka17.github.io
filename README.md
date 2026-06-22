@@ -37,9 +37,20 @@ colored News badges, and **all content managed from one file**:
    `logo: "assets/images/unica.png"`.
 5. To change the accent color, edit `accent` under `site`.
 
+Under `site` you can also set:
+- `title` — the browser-tab / search-result title;
+- `description` — the meta description used by search engines and social cards;
+- `favicon` — path to the small tab icon (e.g. `assets/images/favicon.png`);
+- `url` — your live URL (optional; enables the canonical and social-card image).
+
 Link icons are picked automatically from each link `type` (email, scholar,
 orcid, github, linkedin, x, gitlab, website, …). The CV link is added
-automatically from `cv.file`.
+automatically from `cv.file`. Put your email as a plain address
+(`name@example.com`); the `mailto:` link is built for you.
+
+**Custom sections.** Add free-form sections after Teaching via `sections:`
+(each with a `label` and a `body`). In a body, a blank line starts a new
+paragraph and a line beginning with `- ` becomes a bullet.
 
 In text fields you can use: `**bold**`, `*italic*`, `~~strikethrough~~` and
 `[text](https://link)`. News badges are colored by year and can be customized

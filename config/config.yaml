@@ -7,7 +7,10 @@
 ## ===========================================================================
 
 site:
-  title: "Francesco Congiu"          # Title shown in the browser tab
+  title: "Francesco Congiu"          # Browser tab title and search-result title
+  description: "Francesco Congiu — PhD Student at the University of Cagliari (TAIL), researching confidentiality-preserving and explainable Retrieval-Augmented Generation."   # meta description for search engines / social cards
+  favicon: "assets/images/favicon.png"   # small icon shown in the browser tab
+  # url: "https://francescocongiu.com"   # optional: your live URL (enables canonical + social-card image)
   accent: "#4f46e5"             # Accent color (any hex code)
   default_theme: "auto"         # light | dark | auto (follows the system)
   # News badges are colored by year (a cycle of 5 colors).
@@ -24,16 +27,15 @@ profile:
   name: "Francesco Congiu"
   role: "PhD Student · University of Cagliari"   # <-- edit with your exact title
   photo: "assets/images/profile.jpg"      # replace with your photo
-  email: "[francesco.congiu@acm.org](mailto:francesco.congiu@acm.org)"   # <-- replace with your real email
+  email: "francesco.congiu@acm.org"   # plain address; the mailto: link is built automatically
 
   # Badges shown under your name (research areas)
   research:
-    - "Confidentiality-Preserving RAG"
-    - "Explainable RAG"
-    - "Knowledge Reconciliation"
-    - "User Modelling"
-    - "NLP & IR"
-    - "AI for Education"
+  - "RAG Systems"
+  - "Neural Information Retrieval"
+  - "Privacy-Preserving NLP"
+  - "Knowledge Reconciliation"
+  - "AI in Education"
 
   # 1) Who Am I / Research
   bio: |
@@ -128,6 +130,28 @@ teaching:
       Hands-on laboratory tutoring focused on the implementation and analysis of foundational 
       data structures and algorithms. The sessions involved guiding students through practical coding exercises, 
       debugging, and problem-solving using Python through Jupyter.
+
+## --------------------------------------------------------- CUSTOM SECTIONS
+## Free-form sections shown after Teaching. Each has a "label" and a "body".
+## In the body: blank line = new paragraph, a line starting with "- " = bullet,
+## plus **bold**, *italic*, ~~strike~~ and [links](https://...).
+sections:
+  - label: "Prospective Students"
+    drawer: true                 # show via a side tab that slides open a panel
+    tab_label: "Prospective Students"
+    status: "FILLED"             # OPEN -> green badge/tab, FILLED -> amber
+    body: |
+      I supervise **one MSc thesis student at a time**, and that position is currently filled. Owing to my professional commitments, I am **not accepting new thesis proposals at this time**, and cannot reply to application emails until the next cycle.
+
+      **Next evaluation window: Spring 2027** *(placeholder - update with your real date)*.
+
+      My research lies at the intersection of **Retrieval-Augmented Generation (RAG)** and **Reinforcement Learning (RL)**. If you intend to apply in a future cycle, strong applicants typically bring:
+
+      - A solid foundation in **Deep Learning** (architectures, training, evaluation).
+      - Practical proficiency in **Python** and **PyTorch**.
+      - Some familiarity with **RAG pipelines** and/or **RL fundamentals** (e.g., policy-gradient methods).
+
+      In the meantime, consolidate these foundations, follow recent literature in both areas, and complete a small self-contained project you can later point to. **Please do not send an application email while this section reads FILLED** - messages received in this period cannot be considered. I will update this page as soon as the position reopens.
 
 ## ------------------------------------------------------------------- FOOTER
 footer: |

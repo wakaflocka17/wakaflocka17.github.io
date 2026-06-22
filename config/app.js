@@ -61,6 +61,7 @@
   const el = (tag, cls) => { const n = document.createElement(tag); if (cls) n.className = cls; return n; };
   const cap = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const bareEmail = (s) => { const m = String(s || "").match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/); return m ? m[0] : ""; };
 
   /* Inline formatting: **bold**, *italic*, ~~strike~~, [text](url|mailto) */
   function inlineFmt(s) {
@@ -128,7 +129,8 @@
     }
 
     const links = [];
-    if (p.email) links.push({ type: "email", url: `mailto:${p.email}` });
+    const mail = bareEmail(p.email);
+    if (mail) links.push({ type: "email", url: `mailto:${mail}` });
     (Array.isArray(p.links) ? p.links : []).forEach((l) => { if (l && l.url) links.push(l); });
     if (cfg.cv && cfg.cv.file) links.push({ type: "cv", url: cfg.cv.file });
 
@@ -166,7 +168,8 @@
     if (p.bio) blocks.push(p.bio);
     if (p.supervisor) blocks.push(p.supervisor);
     let contact = p.contact;
-    if (!contact && p.email) contact = `Feel free to reach out by email at [${p.email}](mailto:${p.email}).`;
+    const mail = bareEmail(p.email);
+    if (!contact && mail) contact = `Feel free to reach out by email at [${mail}](mailto:${mail}).`;
     if (contact) blocks.push(contact);
 
     if (!blocks.length) { box.remove(); return; }
@@ -277,6 +280,158 @@
     });
   }
 
+  /* ----------------------------------------------------- sections + status */
+  const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  const statusState = (status) => {
+    const s = String(status || "").toLowerCase();
+    if (/open|available|accept|recruit/.test(s)) return "open";
+    if (/fill|full|clos|unavailable|busy|paus/.test(s)) return "filled";
+    return "neutral";
+  };
+  function statusBadge(status) {
+    const b = el("div", `status-badge status-${statusState(status)}`);
+    b.appendChild(el("span", "status-dot"));
+    b.appendChild(document.createTextNode(`STATUS: ${String(status).toUpperCase()}`));
+    return b;
+  }
+
+  /* A copyable code box (for ``` fenced blocks ```) */
+  function makeCopyBox(text) {
+    const box = el("div", "copybox");
+    const code = el("code", "copybox-code");
+    code.textContent = text;
+    const btn = el("button", "copybox-btn");
+    btn.type = "button";
+    btn.textContent = "Copy";
+    btn.addEventListener("click", async () => {
+      let ok = false;
+      try { await navigator.clipboard.writeText(text); ok = true; }
+      catch (e) {
+        try {
+          const r = document.createRange(); r.selectNodeContents(code);
+          const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+          ok = document.execCommand("copy"); sel.removeAllRanges();
+        } catch (e2) {}
+      }
+      btn.textContent = ok ? "Copied!" : "Select & copy";
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("copied"); }, 1600);
+    });
+    box.appendChild(code);
+    box.appendChild(btn);
+    return box;
+  }
+
+  /* Free-form body: paragraphs, "- " bullets, ``` copyable code blocks ``` */
+  function renderBody(container, text) {
+    const lines = String(text).replace(/\r/g, "").split("\n");
+    let i = 0;
+    while (i < lines.length) {
+      if (/^\s*$/.test(lines[i])) { i++; continue; }
+      if (/^\s*```/.test(lines[i])) {
+        i++; const code = [];
+        while (i < lines.length && !/^\s*```/.test(lines[i])) { code.push(lines[i]); i++; }
+        i++;
+        container.appendChild(makeCopyBox(code.join("\n").replace(/^\n+|\n+$/g, "")));
+        continue;
+      }
+      if (/^\s*\d+\.\s+/.test(lines[i])) {
+        const ol = el("ol", "body-list");
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
+          const li = el("li"); li.innerHTML = inlineFmt(lines[i].replace(/^\s*\d+\.\s+/, "")); ol.appendChild(li); i++;
+        }
+        container.appendChild(ol);
+        continue;
+      }
+      if (/^\s*[-*]\s+/.test(lines[i])) {
+        const ul = el("ul", "body-list");
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
+          const li = el("li"); li.innerHTML = inlineFmt(lines[i].replace(/^\s*[-*]\s+/, "")); ul.appendChild(li); i++;
+        }
+        container.appendChild(ul);
+        continue;
+      }
+      const para = [];
+      while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^\s*```/.test(lines[i]) && !/^\s*[-*]\s+/.test(lines[i])) {
+        para.push(lines[i].trim()); i++;
+      }
+      const p = el("p"); p.innerHTML = inlineFmt(para.join(" ")); container.appendChild(p);
+    }
+  }
+
+  function buildSectionContent(s) {
+    const frag = document.createDocumentFragment();
+    if (s.label) { const lab = el("div", "section-label"); lab.textContent = s.label; frag.appendChild(lab); }
+    if (s.status) frag.appendChild(statusBadge(s.status));
+    if (s.body) { const body = el("div", "section-body"); renderBody(body, s.body); frag.appendChild(body); }
+    return frag;
+  }
+
+  /* Lazily-built slide-in drawer reused by all drawered sections */
+  let DRAWER = null;
+  function ensureDrawer() {
+    if (DRAWER) return DRAWER;
+    const overlay = el("div", "drawer-overlay"); overlay.hidden = true;
+    const panel = el("aside", "drawer"); panel.hidden = true; panel.setAttribute("aria-hidden", "true");
+    panel.setAttribute("role", "dialog"); panel.setAttribute("aria-modal", "true");
+    const close = el("button", "drawer-close"); close.type = "button";
+    close.setAttribute("aria-label", "Close"); close.innerHTML = "&times;";
+    const content = el("div", "drawer-content");
+    panel.appendChild(close); panel.appendChild(content);
+    document.body.appendChild(overlay); document.body.appendChild(panel);
+    const closeFn = () => {
+      panel.classList.remove("open"); overlay.classList.remove("open");
+      panel.setAttribute("aria-hidden", "true"); document.body.classList.remove("drawer-lock");
+      setTimeout(() => { panel.hidden = true; overlay.hidden = true; }, 260);
+    };
+    const openFn = () => {
+      panel.hidden = false; overlay.hidden = false;
+      requestAnimationFrame(() => { panel.classList.add("open"); overlay.classList.add("open"); });
+      panel.setAttribute("aria-hidden", "false"); document.body.classList.add("drawer-lock");
+      close.focus();
+    };
+    close.addEventListener("click", closeFn);
+    overlay.addEventListener("click", closeFn);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) closeFn(); });
+    DRAWER = { content, openFn, closeFn };
+    return DRAWER;
+  }
+
+  function renderSections(cfg) {
+    const host = $("sections");
+    if (!host) return;
+    const items = Array.isArray(cfg.sections) ? cfg.sections : [];
+    let inlineCount = 0;
+    items.forEach((s) => {
+      if (!s || (!s.label && !s.body && !s.status)) return;
+
+      if (s.drawer) {
+        const d = ensureDrawer();
+        const tab = el("button", `drawer-tab status-${statusState(s.status)}`);
+        tab.type = "button";
+        tab.appendChild(el("span", "status-dot"));
+        const t = el("span", "drawer-tab-text");
+        t.textContent = s.tab_label || s.label || "More";
+        tab.appendChild(t);
+        tab.setAttribute("aria-label", `Open: ${s.label || "section"}`);
+        tab.addEventListener("click", () => {
+          d.content.innerHTML = "";
+          d.content.appendChild(buildSectionContent(s));
+          d.openFn();
+        });
+        document.body.appendChild(tab);
+        return;
+      }
+
+      const sec = el("section");
+      if (s.label) sec.id = slugify(s.label);
+      sec.appendChild(buildSectionContent(s));
+      host.appendChild(sec);
+      inlineCount++;
+    });
+    if (!inlineCount) host.remove();
+  }
+
   function renderFooter(cfg) {
     if (cfg.footer) $("page-foot").innerHTML = esc(cfg.footer).replace(/\n/g, "<br>");
     else $("page-foot").remove();
@@ -301,16 +456,47 @@
       return;
     }
 
-    document.title = (cfg.site && cfg.site.title) || (cfg.profile && cfg.profile.name) || "Academic website";
-    if (cfg.site && cfg.site.accent) document.documentElement.style.setProperty("--accent-base", cfg.site.accent);
+    const site = cfg.site || {};
+    const prof = cfg.profile || {};
+    const pageTitle = site.title || prof.name || "Academic website";
+    const pageDesc = site.description || "";
 
-    initTheme((cfg.site && cfg.site.default_theme) || "auto");
+    // Title, meta description, favicon and social cards
+    const setMeta = (attr, key, content) => {
+      if (!content) return;
+      let m = document.head.querySelector(`meta[${attr}="${key}"]`);
+      if (!m) { m = document.createElement("meta"); m.setAttribute(attr, key); document.head.appendChild(m); }
+      m.setAttribute("content", content);
+    };
+    document.title = pageTitle;
+    setMeta("name", "description", pageDesc);
+    setMeta("property", "og:title", pageTitle);
+    setMeta("property", "og:description", pageDesc);
+    setMeta("name", "twitter:title", pageTitle);
+    setMeta("name", "twitter:description", pageDesc);
+    if (site.url) setMeta("property", "og:url", site.url);
+    if (prof.photo) {
+      let img = prof.photo;
+      if (site.url && !/^https?:/i.test(img)) img = site.url.replace(/\/+$/, "") + "/" + img.replace(/^\/+/, "");
+      setMeta("property", "og:image", img);
+      setMeta("name", "twitter:image", img);
+    }
+    if (site.favicon) {
+      let link = document.head.querySelector('link[rel="icon"]');
+      if (!link) { link = document.createElement("link"); link.rel = "icon"; document.head.appendChild(link); }
+      link.href = site.favicon;
+    }
+
+    if (site.accent) document.documentElement.style.setProperty("--accent-base", site.accent);
+
+    initTheme(site.default_theme || "auto");
 
     renderHeader(cfg);
     renderAbout(cfg);
     renderNews(cfg);
     renderPublications(cfg);
     renderTeaching(cfg);
+    renderSections(cfg);
     renderFooter(cfg);
 
     $("boot").hidden = true;
