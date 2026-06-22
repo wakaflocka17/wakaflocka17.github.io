@@ -27,7 +27,7 @@ sections:
     body: |
       I supervise **one BSc/MSc thesis student at a time**, and that position is currently filled. Owing to my accademic commitments, I am **not accepting new thesis proposals at this time**, and cannot reply to application emails until the next cycle.
 
-      **Next evaluation window: Autumn 2026** *.
+      **Next evaluation window: Autumn 2026**.
 
       My research focuses primarily on **RAG systems** and their various aspects. If you are planning to apply for a future recruitment round, the most suitable candidates generally possess:
 
