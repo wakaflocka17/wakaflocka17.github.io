@@ -1,12 +1,7 @@
+
 <div align="center">
 
 # WK Academic Website
-
-A clean, fast, **single-page** academic website driven entirely by one
-`config/config.yaml`. No build step and no framework: just static HTML, CSS and a
-little JavaScript, ready for GitHub Pages.
-
-**🌐 Live:** <https://francescocongiu.com>
 
 [![License: MIT](https://img.shields.io/github/license/wakaflocka17/wakaflocka17.github.io?style=flat-square&color=4f46e5)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/wakaflocka17/wakaflocka17.github.io?style=flat-square&color=success)](https://github.com/wakaflocka17/wakaflocka17.github.io/stargazers)
@@ -19,6 +14,14 @@ little JavaScript, ready for GitHub Pages.
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat-square&logo=githubpages&logoColor=white)
+
+A clean, fast, **single-page** academic website driven entirely by one
+`config/config.yaml`. No build step and no framework: just static HTML, CSS and a
+little JavaScript, ready for GitHub Pages.
+
+<img width="1642" height="954" alt="Screenshot 2026-06-24 alle 11 18 32" src="https://github.com/user-attachments/assets/cf23d2ae-ba3b-4436-b860-ed9c4cdbdd37" />
+
+**🌐 Live:** <https://francescocongiu.com>
 
 </div>
 
